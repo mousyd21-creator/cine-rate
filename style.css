@@ -1,0 +1,180 @@
+:root {
+  --bg-dark: #0a0a0a;
+  --card-bg: #1a1a1a;
+  --accent: #00d4ff;
+  --gold: #ffd700;
+  --text-main: #ffffff;
+  --text-dim: #b3b3b3;
+  --glass: rgba(255, 255, 255, 0.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+} /* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.logo span {
+  color: var(--accent);
+}
+.search-bar input {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  color: white;
+  width: 300px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: var(--accent);
+} /* Hero Section */
+.hero {
+  height: 80vh;
+  background: url("https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to right, #0a0a0a 20%, transparent 80%),
+    linear-gradient(to top, #0a0a0a, transparent);
+}
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  z-index: 2;
+}
+.trending-tag {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+h1 {
+  font-size: 4rem;
+  margin: 0.5rem 0;
+}
+.ratings-row {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.rating-badge {
+  background: var(--glass);
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.cine-gold {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.description {
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+}
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.btn-secondary {
+  background: var(--glass);
+  color: white;
+  border: 1px solid white;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+} /* Movie Grid */
+.container {
+  padding: 4rem 5%;
+}
+.section-title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.movie-card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.movie-card:hover {
+  transform: translateY(-10px);
+}
+.poster-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  background: var(--card-bg);
+}
+.poster-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+.movie-card h3 {
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+.movie-card p {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}

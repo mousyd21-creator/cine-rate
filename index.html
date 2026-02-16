@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine-Rate | Discover & Review</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal-styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="hero-fix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CINE-<span>RATE</span></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search movies or genres...">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Suggestions</a></li>
+            <li><a href="#" class="wishlist-link">❤️ Wishlist <span class="wishlist-count">0</span></a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="trending-tag">#1 Trending Today</span>
+            <h1>Loading...</h1>
+            <p class="meta">Loading movie data...</p>
+            <div class="ratings-row">
+                <div class="rating-badge">TMDB: --</div>
+                <div class="rating-badge cine-gold">Cine-Rate: --</div>
+            </div>
+            <p class="description">
+                Please wait while we fetch the latest trending movie...
+            </p>
+            <div class="cta-buttons">
+                <button class="btn-primary">View Details</button>
+                <button class="btn-secondary">+ Watchlist</button>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <h2 class="section-title">Recommended for You</h2>
+        <div class="movie-grid" id="movie-grid">
+            <p>Loading movies...</p>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

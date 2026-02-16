@@ -1,0 +1,280 @@
+/* Enhanced Responsive Styles */
+
+/* Fix for hero section - prevent content hiding under fixed navbar */
+.hero {
+    padding-top: 120px !important;
+}
+
+.hero-content {
+    margin-top: 0;
+}
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1.5rem 3%;
+    }
+    
+    .container {
+        padding: 3rem 3%;
+    }
+    
+    .hero {
+        padding: 0 3%;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile landscape and tablet portrait */
+@media (max-width: 768px) {
+    /* Navbar responsive */
+    .navbar {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 2%;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+        order: 1;
+    }
+    
+    .search-bar {
+        order: 3;
+        width: 100%;
+    }
+    
+    .search-bar input {
+        width: 100%;
+        padding: 0.7rem 1.2rem;
+    }
+    
+    .nav-links {
+        order: 2;
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Hero Section */
+    .hero {
+        height: 70vh;
+        padding: 100px 4% 0 4% !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    .description {
+        font-size: 0.9rem;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Movie Grid */
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1.2rem;
+    }
+    
+    .movie-card h3 {
+        font-size: 0.9rem;
+    }
+    
+    .movie-card p {
+        font-size: 0.75rem;
+    }
+    
+    .container {
+        padding: 2rem 4%;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem 3%;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .nav-links a {
+        padding: 0.3rem 0.6rem;
+    }
+    
+    /* Hero Section */
+    .hero {
+        height: 60vh;
+        padding: 90px 5% 0 5% !important;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .meta {
+        font-size: 0.8rem;
+    }
+    
+    .ratings-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .rating-badge {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .trending-tag {
+        font-size: 0.7rem;
+    }
+    
+    /* Buttons */
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Movie Grid */
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem 5%;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Notification */
+    .notification {
+        right: 10px;
+        left: 10px;
+        bottom: -100px;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .notification.show {
+        bottom: 10px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .movie-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        font-size: 0.75rem;
+    }
+    
+    .hero {
+        height: 55vh;
+    }
+}
+
+/* Landscape orientation fixes */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        padding-top: 80px !important;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .description {
+        display: none;
+    }
+    
+    .modal-content {
+        max-height: 95vh;
+    }
+}
+/* Hero Section Fix - Prevents content from hiding under fixed navbar */
+
+/* Main hero section padding adjustment */
+.hero {
+    padding-top: 120px !important;
+}
+
+/* Ensure hero content doesn't get cut off */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Make sure trending tag is visible */
+.trending-tag {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 90px !important;
+    }
+}
+
+/* Landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding-top: 80px !important;
+    }
+}

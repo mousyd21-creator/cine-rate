@@ -1,0 +1,509 @@
+/* Additional styles for modal and interactive elements */
+
+/* Movie Modal */
+.movie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: 15px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s;
+}
+
+.close-modal:hover {
+    transform: scale(1.2);
+    color: var(--accent);
+}
+
+.modal-body {
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.modal-poster {
+    flex: 0 0 300px;
+}
+
+.modal-poster img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-info {
+    flex: 1;
+}
+
+.modal-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-meta {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+}
+
+.modal-description {
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin: 1.5rem 0;
+}
+
+/* Star Rating */
+.rating-section {
+    margin: 2rem 0;
+}
+
+.rating-section h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 2rem;
+}
+
+.star {
+    cursor: pointer;
+    color: #444;
+    transition: all 0.2s;
+}
+
+.star:hover,
+.star.filled {
+    color: var(--gold);
+    transform: scale(1.2);
+}
+
+.star:hover ~ .star {
+    color: #444;
+}
+
+/* User Rating Display on Cards */
+.user-rating {
+    display: block;
+    color: var(--gold);
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    font-weight: 600;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: -100px;
+    right: 30px;
+    background: var(--accent);
+    color: var(--bg-dark);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    z-index: 3000;
+    transition: bottom 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+}
+
+.notification.show {
+    bottom: 30px;
+}
+
+/* Scrollbar Styling */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+/* Responsive Design for Modal */
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+    }
+    
+    .modal-poster {
+        flex: 0 0 auto;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .modal-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .star-rating {
+        font-size: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .modal-body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .modal-poster {
+        max-width: 200px;
+    }
+    
+    .modal-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .star-rating {
+        font-size: 1.3rem;
+        gap: 0.3rem;
+    }
+    
+    .ratings-row {
+        flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Loading state */
+.movie-grid p {
+    text-align: center;
+    color: var(--text-dim);
+    grid-column: 1 / -1;
+    padding: 2rem;
+}
+
+/* Enhanced hover effects */
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.card-rating {
+    font-weight: 600;
+    color: var(--gold);
+}
+
+/* Smooth transitions */
+button {
+    transition: all 0.3s ease;
+}
+
+/* Genre Bar Styles */
+.genre-bar {
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.genre-bar::-webkit-scrollbar {
+    height: 6px;
+}
+
+.genre-bar::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-radius: 3px;
+}
+
+.genre-bar::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+.genre-buttons {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+}
+
+.genre-btn {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.genre-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.genre-btn.all-genres {
+    background: var(--card-bg);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.genre-btn.all-genres:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* Genre Modal Styles */
+.genre-modal-content {
+    max-width: 700px;
+    padding: 3rem;
+    background: var(--card-bg) !important;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.genre-modal-btn {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.genre-modal-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+/* Mobile responsive for genre buttons */
+@media (max-width: 768px) {
+    .genre-buttons {
+        gap: 0.6rem;
+    }
+    
+    .genre-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .genre-modal-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .genre-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .genre-modal-btn {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .genre-bar {
+        margin-bottom: 1.5rem;
+    }
+    
+    .genre-buttons {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    
+    .genre-btn {
+        flex-shrink: 0;
+    }
+    
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Wishlist Styles */
+.wishlist-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.wishlist-count {
+    background: var(--accent);
+    color: var(--bg-dark);
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    display: none;
+}
+
+.wishlist-count:not(:empty) {
+    display: inline;
+}
+
+/* Wishlist button in modal */
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-wishlist {
+    background: var(--glass);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-wishlist:hover {
+    border-color: var(--accent);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.btn-wishlist.in-wishlist {
+    border-color: #ff4757;
+    background: rgba(255, 71, 87, 0.1);
+    color: #ff4757;
+}
+
+.btn-wishlist.in-wishlist:hover {
+    background: rgba(255, 71, 87, 0.2);
+}
+
+/* Remove from wishlist button */
+.remove-from-wishlist {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 71, 87, 0.9);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.movie-card:hover .remove-from-wishlist {
+    opacity: 1;
+}
+
+.remove-from-wishlist:hover {
+    background: #ff1744;
+    transform: scale(1.1);
+}
+
+/* Hero button wishlist state */
+.btn-secondary.in-wishlist {
+    background: rgba(255, 71, 87, 0.2);
+    border-color: #ff4757;
+    color: #ff4757;
+}
+
+.btn-secondary.in-wishlist:hover {
+    background: rgba(255, 71, 87, 0.3);
+}
+
+/* Mobile responsive for wishlist */
+@media (max-width: 768px) {
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .btn-wishlist,
+    .modal-actions .btn-primary {
+        width: 100%;
+    }
+    
+    .wishlist-link {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .remove-from-wishlist {
+        opacity: 1;
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
+}
